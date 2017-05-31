@@ -1,0 +1,17 @@
+{
+  "name": "ConwaysGameOfLife",
+  "version": "1.0.0",
+  "description": "Conway's Game of Life",
+  "main": "index.js",
+  "author": "kwrongkey@gmail.com, Kai.hu@thoughtworks.com",
+  "license": "MIT",
+  "dependencies": {
+    "material-ui": "^0.18.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
