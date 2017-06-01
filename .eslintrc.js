@@ -2,7 +2,6 @@ module.exports = {
     "env": {
         "browser": true,
         "node": true,
-        "commonjs": true,
         "es6": true
     },
     "extends": "eslint:recommended",
@@ -17,6 +16,8 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
         "indent": [
             "error",
             "tab"

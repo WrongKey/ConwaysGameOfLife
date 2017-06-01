@@ -9,7 +9,7 @@ module.exports = {
 
 	entry: [
 		'react-hot-loader/patch',
-		'webpack-dev-server/client?http://localhost:3000',
+		'webpack-dev-server/client?http://localhost:5000',
 		'webpack/hot/only-dev-server',
 		'./index.js'
 	],
@@ -26,18 +26,22 @@ module.exports = {
 		hot: true,
 		contentBase: path.resolve(__dirname, 'dist'),
 		publicPath: '/',
-		port: 3000
+		port: 5000
 	},
 
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.js$/,
 				exclude: /node_modules/,        
 				use: {
 					loader: 'babel-loader',
-					options: { presets: ['react', 'es2015'] } 
+					options: { presets: ['react', 'es2015', 'stage-0'] } 
 				}
+			},
+			{
+				test: /\.css$/,
+				use: [ 'style-loader', 'css-loader' ]
 			}
 		]
 	},
@@ -46,9 +50,9 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),
 		new HtmlWebpackPlugin({template: 'index.html', inject: true}),
-		new webpack.NoErrorsPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 		new OpenBrowserPlugin({
-			url: 'http://localhost:3000'
+			url: 'http://localhost:5000'
 		}),
 		new DashboardPlugin()
 	]
